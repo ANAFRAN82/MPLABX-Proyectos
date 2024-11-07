@@ -1,0 +1,17 @@
+Warning[205] C:\USERS\ANACR\MPLABXPROJECTS\ACARREOBITS.X\BITS.ASM 1 : Found directive in column 1. (LIST)
+Warning[215] C:\USERS\ANACR\MPLABXPROJECTS\ACARREOBITS.X\BITS.ASM 1 : Processor superseded by command line.  Verify processor symbol.
+Warning[205] C:\USERS\ANACR\MPLABXPROJECTS\ACARREOBITS.X\BITS.ASM 2 : Found directive in column 1. (INCLUDE)
+Message[301] C:\PROGRAM FILES (X86)\MICROCHIP\MPLABX\V5.20\MPASMX\P16F628A.INC 34 : MESSAGE: (Processor-header file mismatch.  Verify selected processor.)
+Warning[205] C:\USERS\ANACR\MPLABXPROJECTS\ACARREOBITS.X\BITS.ASM 4 : Found directive in column 1. (__CONFIG)
+Warning[205] C:\USERS\ANACR\MPLABXPROJECTS\ACARREOBITS.X\BITS.ASM 6 : Found directive in column 1. (ORG)
+Warning[203] C:\USERS\ANACR\MPLABXPROJECTS\ACARREOBITS.X\BITS.ASM 8 : Found opcode in column 1. (BSF)
+Warning[203] C:\USERS\ANACR\MPLABXPROJECTS\ACARREOBITS.X\BITS.ASM 9 : Found opcode in column 1. (MOVLW)
+Warning[202] C:\USERS\ANACR\MPLABXPROJECTS\ACARREOBITS.X\BITS.ASM 9 : Argument out of range.  Least significant bits used.
+Warning[203] C:\USERS\ANACR\MPLABXPROJECTS\ACARREOBITS.X\BITS.ASM 10 : Found opcode in column 1. (MOVWF)
+Message[302] C:\USERS\ANACR\MPLABXPROJECTS\ACARREOBITS.X\BITS.ASM 10 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[203] C:\USERS\ANACR\MPLABXPROJECTS\ACARREOBITS.X\BITS.ASM 11 : Found opcode in column 1. (CLRF)
+Message[302] C:\USERS\ANACR\MPLABXPROJECTS\ACARREOBITS.X\BITS.ASM 11 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[203] C:\USERS\ANACR\MPLABXPROJECTS\ACARREOBITS.X\BITS.ASM 12 : Found opcode in column 1. (BCF)
+Warning[203] C:\USERS\ANACR\MPLABXPROJECTS\ACARREOBITS.X\BITS.ASM 14 : Found opcode in column 1. (CLRF)
+Warning[203] C:\USERS\ANACR\MPLABXPROJECTS\ACARREOBITS.X\BITS.ASM 15 : Found opcode in column 1. (BSF)
+Warning[205] C:\USERS\ANACR\MPLABXPROJECTS\ACARREOBITS.X\BITS.ASM 39 : Found directive in column 1. (END)
