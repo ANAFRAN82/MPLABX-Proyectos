@@ -1,0 +1,8 @@
+Warning[205] C:\USERS\ANACR\MPLABXPROJECTS\BITSS.X\ACBITS.ASM 1 : Found directive in column 1. (LIST)
+Warning[205] C:\USERS\ANACR\MPLABXPROJECTS\BITSS.X\ACBITS.ASM 3 : Found directive in column 1. (INCLUDE)
+Warning[205] C:\USERS\ANACR\MPLABXPROJECTS\BITSS.X\ACBITS.ASM 5 : Found directive in column 1. (__CONFIG)
+Warning[205] C:\USERS\ANACR\MPLABXPROJECTS\BITSS.X\ACBITS.ASM 11 : Found directive in column 1. (ORG)
+Warning[203] C:\USERS\ANACR\MPLABXPROJECTS\BITSS.X\ACBITS.ASM 12 : Found opcode in column 1. (GOTO)
+Message[302] C:\USERS\ANACR\MPLABXPROJECTS\BITSS.X\ACBITS.ASM 19 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[207] C:\USERS\ANACR\MPLABXPROJECTS\BITSS.X\ACBITS.ASM 22 : Found label after column 1. (LOOP)
+Warning[205] C:\USERS\ANACR\MPLABXPROJECTS\BITSS.X\ACBITS.ASM 43 : Found directive in column 1. (END)
