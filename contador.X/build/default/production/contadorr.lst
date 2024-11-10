@@ -1,0 +1,239 @@
+MPASM 5.84                     CONTADORR.ASM   5-13-2024  19:54:21         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (LIST)
+                      00001 LIST P=16F84A
+Warning[205]: Found directive in column 1. (INCLUDE)
+                      00002 INCLUDE <P16F84A.INC>
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ; Build date : Mar 17 2019
+                      00005 ;  MPASM PIC16F84A processor include
+                      00006 ; 
+                      00007 ;  (c) Copyright 1999-2019 Microchip Technology, All rights reserved
+                      00008 ;==========================================================================
+                      00009 
+                      00209         LIST
+                      00003 
+Warning[205]: Found directive in column 1. (CBLOCK)
+                      00004 CBLOCK 0X0C
+                      00005     ; Nuevas variables
+  0000000C            00006     Cont1
+Warning[205]: Found directive in column 1. (ENDC)
+                      00007 ENDC
+                      00008 
+Warning[205]: Found directive in column 1. (ORG)
+                      00009 ORG 0
+                      00010 
+Warning[203]: Found opcode in column 1. (bsf)
+0000   1683           00011 bsf STATUS, RP0
+Warning[203]: Found opcode in column 1. (movlw)
+0001   3000           00012 movlw 0x00
+Warning[203]: Found opcode in column 1. (movwf)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0002   0086           00013 movwf TRISB
+Warning[203]: Found opcode in column 1. (bsf)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0003   1405           00014 bsf TRISA, RA0 ; Configura RA0 como entrada para incrementar
+Warning[203]: Found opcode in column 1. (bsf)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0004   1485           00015 bsf TRISA, RA1 ; Configura RA1 como entrada para decrementar
+Warning[203]: Found opcode in column 1. (bsf)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0005   1505           00016 bsf TRISA, RA2 ; Configura RA2 como entrada para reiniciar
+Warning[203]: Found opcode in column 1. (bcf)
+0006   1283           00017 bcf STATUS, RP0
+Warning[203]: Found opcode in column 1. (clrf)
+0007   018C           00018 clrf Cont1
+Warning[203]: Found opcode in column 1. (clrf)
+0008   0186           00019 clrf PORTB
+                      00020 
+0009                  00021 Bucle
+                      00022     ; Incrementa el contador si se activa el pulsador RA0
+0009   1C05           00023     btfss PORTA, RA0 ; Verifica si el pulsador RA0 está presionado
+000A   2???           00024     goto NoIncrementar ; Si no está presionado, salta a la comprobación del decremento
+000B   0A8C           00025     incf Cont1, F ; Incrementa el contador
+MPASM 5.84                     CONTADORR.ASM   5-13-2024  19:54:21         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+000C   2???           00026     call ActualizarDisplay ; Actualiza el display de inmediato
+000D   2???           00027     goto Esperar ; Espera hasta que se suelte el botón antes de continuar
+                      00028 
+000E                  00029 NoIncrementar
+                      00030     ; Decrementa el contador si se activa el pulsador RA1
+000E   1C85           00031     btfss PORTA, RA1 ; Verifica si el pulsador RA1 está presionado
+000F   2???           00032     goto NoReiniciar ; Si no está presionado, salta a la comprobación de reinicio
+0010   038C           00033     decf Cont1, F ; Decrementa el contador
+0011   2???           00034     call ActualizarDisplay ; Actualiza el display de inmediato
+0012   2???           00035     goto Esperar ; Espera hasta que se suelte el botón antes de continuar
+                      00036 
+0013                  00037 NoReiniciar
+                      00038     ; Reinicia el contador si se activa el pulsador RA2
+0013   1D05           00039     btfss PORTA, RA2 ; Verifica si el pulsador RA2 está presionado
+0014   2???           00040     goto Esperar ; Si no está presionado, espera hasta que se presione algún botón
+0015   018C           00041     clrf Cont1 ; Reinicia el contador a cero
+0016   2???           00042     call ActualizarDisplay ; Actualiza el display de inmediato
+0017   2???           00043     goto Esperar ; Espera hasta que se suelte el botón antes de continuar
+                      00044 
+0018                  00045 Esperar
+                      00046     ; Espera hasta que se suelten los botones antes de continuar
+0018   1805           00047     btfsc PORTA, RA0
+0019   2???           00048     goto Esperar
+001A   1885           00049     btfsc PORTA, RA1
+001B   2???           00050     goto Esperar
+001C   1905           00051     btfsc PORTA, RA2
+001D   2???           00052     goto Esperar
+                      00053 
+001E   2???           00054     goto Bucle
+                      00055 
+001F                  00056 ActualizarDisplay
+001F   080C           00057     movf Cont1, W
+0020   2???           00058     call TABLA
+0021   0086           00059     movwf PORTB
+0022   0008           00060     return
+                      00061 
+0023                  00062 TABLA
+0023   0782           00063     addwf PCL, F
+0024   343F 3406 345B 00064     DT 0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x67, 0x77, 0x7C, 0x39, 0x5E, 0x79, 0x71
+       344F 3466 346D 
+       347D 3407 347F 
+       3467 3477 347C 
+       3439 345E 3479 
+       3471 
+                      00065     END
+MPASM 5.84                     CONTADORR.ASM   5-13-2024  19:54:21         PAGE  3
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ActualizarDisplay                 0000001F
+Bucle                             00000009
+C                                 00000000
+Cont1                             0000000C
+DC                                00000001
+EEADR                             00000009
+EECON1                            00000088
+EECON2                            00000089
+EEDATA                            00000008
+EEIE                              00000006
+EEIF                              00000004
+Esperar                           00000018
+F                                 00000001
+FSR                               00000004
+GIE                               00000007
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+NOT_PD                            00000003
+NOT_RBPU                          00000007
+NOT_TO                            00000004
+NoIncrementar                     0000000E
+NoReiniciar                       00000013
+OPTION_REG                        00000081
+PCL                               00000002
+PCLATH                            0000000A
+PORTA                             00000005
+PORTB                             00000006
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+RA0                               00000000
+RA1                               00000001
+RA2                               00000002
+RA3                               00000003
+RA4                               00000004
+RB0                               00000000
+RB1                               00000001
+RB2                               00000002
+RB3                               00000003
+RB4                               00000004
+RB5                               00000005
+RB6                               00000006
+RB7                               00000007
+RBIE                              00000003
+RBIF                              00000000
+RD                                00000000
+RP0                               00000005
+RP1                               00000006
+MPASM 5.84                     CONTADORR.ASM   5-13-2024  19:54:21         PAGE  4
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+STATUS                            00000003
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+TABLA                             00000023
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TRISA                             00000085
+TRISA0                            00000000
+TRISA1                            00000001
+TRISA2                            00000002
+TRISA3                            00000003
+TRISA4                            00000004
+TRISB                             00000086
+TRISB0                            00000000
+TRISB1                            00000001
+TRISB2                            00000002
+TRISB3                            00000003
+TRISB4                            00000004
+TRISB5                            00000005
+TRISB6                            00000006
+TRISB7                            00000007
+W                                 00000000
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_CONFIG                           00002007
+_CP_OFF                           00003FFF
+_CP_ON                            0000000F
+_DEVID1                           00002006
+_FOSC_EXTRC                       00003FFF
+_FOSC_HS                          00003FFE
+_FOSC_LP                          00003FFC
+_FOSC_XT                          00003FFD
+_HS_OSC                           00003FFE
+_IDLOC0                           00002000
+_IDLOC1                           00002001
+_IDLOC2                           00002002
+_IDLOC3                           00002003
+_LP_OSC                           00003FFC
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDTE_OFF                         00003FFB
+_WDTE_ON                          00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FFD
+__16F84A                          00000001
+
+MPASM 5.84                     CONTADORR.ASM   5-13-2024  19:54:21         PAGE  5
+
+
+
+
+
+Errors   :     0
+Warnings :    14 reported,     0 suppressed
+Messages :     4 reported,     0 suppressed
+
+
