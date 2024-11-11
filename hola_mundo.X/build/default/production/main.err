@@ -1,0 +1,12 @@
+Warning[205] C:\USERS\ANACR\MPLABXPROJECTS\HOLA_MUNDO.X\MAIN.ASM 1 : Found directive in column 1. (LIST)
+Warning[205] C:\USERS\ANACR\MPLABXPROJECTS\HOLA_MUNDO.X\MAIN.ASM 3 : Found directive in column 1. (INCLUDE)
+Warning[205] C:\USERS\ANACR\MPLABXPROJECTS\HOLA_MUNDO.X\MAIN.ASM 5 : Found directive in column 1. (__CONFIG)
+Warning[205] C:\USERS\ANACR\MPLABXPROJECTS\HOLA_MUNDO.X\MAIN.ASM 7 : Found directive in column 1. (ORG)
+Warning[203] C:\USERS\ANACR\MPLABXPROJECTS\HOLA_MUNDO.X\MAIN.ASM 9 : Found opcode in column 1. (BSF)
+Warning[203] C:\USERS\ANACR\MPLABXPROJECTS\HOLA_MUNDO.X\MAIN.ASM 10 : Found opcode in column 1. (BSF)
+Message[302] C:\USERS\ANACR\MPLABXPROJECTS\HOLA_MUNDO.X\MAIN.ASM 10 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[203] C:\USERS\ANACR\MPLABXPROJECTS\HOLA_MUNDO.X\MAIN.ASM 11 : Found opcode in column 1. (BSF)
+Message[302] C:\USERS\ANACR\MPLABXPROJECTS\HOLA_MUNDO.X\MAIN.ASM 11 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[203] C:\USERS\ANACR\MPLABXPROJECTS\HOLA_MUNDO.X\MAIN.ASM 12 : Found opcode in column 1. (BCF)
+Message[302] C:\USERS\ANACR\MPLABXPROJECTS\HOLA_MUNDO.X\MAIN.ASM 12 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[203] C:\USERS\ANACR\MPLABXPROJECTS\HOLA_MUNDO.X\MAIN.ASM 14 : Found opcode in column 1. (BCF)
