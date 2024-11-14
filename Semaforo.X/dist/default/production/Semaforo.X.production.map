@@ -1,0 +1,50 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Wed Oct 16 07:12:12 2024
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000078
+                   .cinit    romdata   0x00003c    program   0x000004
+.config_2007_BUILD/DEFAULT/PRODUCTION/SEMAFOR       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00003d      
+                            0x002007    0x002007      
+            63 out of 2182 program addresses used, program memory utilization is 2%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+          APAGAR_SEMAFORO   0x000026    program     static C:\Users\anacr\MPLABXProjects\Semaforo.X\semaforo.asm
+       ENCENDER_SEMAFOROS   0x000013    program     static C:\Users\anacr\MPLABXProjects\Semaforo.X\semaforo.asm
+                   INICIO   0x000001    program     static C:\Users\anacr\MPLABXProjects\Semaforo.X\semaforo.asm
+          INICIO_SEMAFORO   0x00000f    program     static C:\Users\anacr\MPLABXProjects\Semaforo.X\semaforo.asm
+                MAIN_LOOP   0x00000a    program     static C:\Users\anacr\MPLABXProjects\Semaforo.X\semaforo.asm
+               RETARDO_2S   0x000033    program     static C:\Users\anacr\MPLABXProjects\Semaforo.X\semaforo.asm
+          RETARDO_2S_LOOP   0x000034    program     static C:\Users\anacr\MPLABXProjects\Semaforo.X\semaforo.asm
+               RETARDO_5S   0x00002a    program     static C:\Users\anacr\MPLABXProjects\Semaforo.X\semaforo.asm
+          RETARDO_5S_LOOP   0x00002b    program     static C:\Users\anacr\MPLABXProjects\Semaforo.X\semaforo.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   INICIO   0x000001    program     static C:\Users\anacr\MPLABXProjects\Semaforo.X\semaforo.asm
+                MAIN_LOOP   0x00000a    program     static C:\Users\anacr\MPLABXProjects\Semaforo.X\semaforo.asm
+          INICIO_SEMAFORO   0x00000f    program     static C:\Users\anacr\MPLABXProjects\Semaforo.X\semaforo.asm
+       ENCENDER_SEMAFOROS   0x000013    program     static C:\Users\anacr\MPLABXProjects\Semaforo.X\semaforo.asm
+          APAGAR_SEMAFORO   0x000026    program     static C:\Users\anacr\MPLABXProjects\Semaforo.X\semaforo.asm
+               RETARDO_5S   0x00002a    program     static C:\Users\anacr\MPLABXProjects\Semaforo.X\semaforo.asm
+          RETARDO_5S_LOOP   0x00002b    program     static C:\Users\anacr\MPLABXProjects\Semaforo.X\semaforo.asm
+               RETARDO_2S   0x000033    program     static C:\Users\anacr\MPLABXProjects\Semaforo.X\semaforo.asm
+          RETARDO_2S_LOOP   0x000034    program     static C:\Users\anacr\MPLABXProjects\Semaforo.X\semaforo.asm
+
+
